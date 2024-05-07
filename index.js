@@ -20,7 +20,7 @@ const vel2 = calcNewVel(acc, vel, time) //calculates new velocity based on accel
 
 // Pick up an error with how the function below is called and make it robust to such errors
 function calcNewVel (acc, vel, time) { 
-  return vel + (acc*time)
+  return vel + (acc *3.6) *(time)
 }
 
 console.log(`Corrected New Velocity: ${vel2} km/h`);
