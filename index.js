@@ -29,7 +29,7 @@ const calculateNewVelocity = (props) => {
   return velocity + (acceleration * accelerationConversionFactor * time);
 };
 
-const newVelocity = calculateNewVelocity({acceleration, velocity, time});
+const newVelocity = calculateNewVelocity(props);
 
  
 console.log(`Corrected New Velocity: ${newVelocity} km/h`);
