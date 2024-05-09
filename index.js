@@ -24,6 +24,9 @@ const newRemainingFuel = RemainingFuel - fuelBurnRate*time //calculates remainin
 // Pick up an error with how the function below is called and make it robust to such errors
 const calculateNewVelocity = (props) => {
   const {acceleration, velocity, time} = props;
+  if(acceleration < 0 || velocity < 0 || time < 0 || newRemainingFuel < 0 || newDistance < 0 ) {
+    throw new Error("Values must be non negative");
+  }
   return velocity + (acceleration * accelerationConversionFactor * time);
 };
 
