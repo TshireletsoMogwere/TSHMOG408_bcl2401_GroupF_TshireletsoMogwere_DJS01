@@ -13,6 +13,10 @@ const distance = 0; // distance (km)
 const TemaningFuel = 5000; // remaining fuel (kg)
 const fuelBurnRate = 0.5; // fuel burn rate (kg/s)
 
+//Convert values into correct units
+const timeConversionFactor = 3600;
+const accelerationConversionFactor = 3.6;
+
 
 const d2 = d + (velocity*time) //calcultes new distance
 const rf = fuelBurnRate*time //calculates remaining fuel
