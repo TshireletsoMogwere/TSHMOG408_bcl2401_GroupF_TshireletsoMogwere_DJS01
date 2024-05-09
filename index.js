@@ -20,8 +20,8 @@ const timeConversionFactor = 3600;
 const accelerationConversionFactor = 3.6;
 
 
-const newDistance = distance + (velocity*time/timeConversionFactor) //calcultes new distance
-const newRemainingFuel = RemainingFuel - fuelBurnRate*time //calculates remaining fuel
+const newDistance = props.distance + (props.velocity*props.time/timeConversionFactor); //calcultes new distance
+const newRemainingFuel = props.RemainingFuel - props.fuelBurnRate*props.time; //calculates remaining fuel
 
 // Pick up an error with how the function below is called and make it robust to such errors
 const calculateNewVelocity = (props) => {
