@@ -7,7 +7,7 @@
 
 // Given Parameters
 const props = {
-velocity: 1000, // velocity (km/h)
+velocity: 10000, // velocity (km/h)
 acceleration: 3, // acceleration (m/s^2)
 time: 3600, // seconds (1 hour)
 distance: 0, // distance (km)
