@@ -10,7 +10,7 @@ const velocity = 10000; // velocity (km/h)
 const acceleration = 3; // acceleration (m/s^2)
 const time = 3600; // seconds (1 hour)
 const distance = 0; // distance (km)
-const TemaningFuel = 5000; // remaining fuel (kg)
+const RemainingFuel = 5000; // remaining fuel (kg)
 const fuelBurnRate = 0.5; // fuel burn rate (kg/s)
 
 //Convert values into correct units
