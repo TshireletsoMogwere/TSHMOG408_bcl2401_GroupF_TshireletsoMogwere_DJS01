@@ -7,7 +7,7 @@
 
 // Given Parameters
 const props = {
-velocity: 10000, // velocity (km/h)
+velocity: 1000, // velocity (km/h)
 acceleration: 3, // acceleration (m/s^2)
 time: 3600, // seconds (1 hour)
 distance: 0, // distance (km)
@@ -16,8 +16,8 @@ fuelBurnRate: 0.5, // fuel burn rate (kg/s)
 }
 
 //Convert values into correct units
-const timeConversionFactor = 3600;
-const accelerationConversionFactor = 3.6;
+const timeConversionFactor = 3600; //converts time into hours
+const accelerationConversionFactor = 3.6; //converts acceleration into k/m
 
 
 const newDistance = props.distance + (props.velocity*props.time/timeConversionFactor); //calcultes new distance
@@ -26,13 +26,16 @@ const newRemainingFuel = props.RemainingFuel - props.fuelBurnRate*props.time; //
 // Pick up an error with how the function below is called and make it robust to such errors
 const calculateNewVelocity = (props) => {
   const {acceleration, velocity, time} = props;
-  if (acceleration !== 3 || velocity !== 10000 || time !== 3600) {
-    throw new Error("Invalid units input")
-  }
   return velocity + (acceleration * accelerationConversionFactor * time);
 };
 
-const newVelocity = calculateNewVelocity(props);
+
+const newVelocity = calculateNewVelocity(props); //calculates new velocity
+
+if(newVelocity !== 48880 || newDistance !== 10000 || newRemainingFuel !== 3200) {
+  throw Error ("Invalid Units Input")
+  }
+ 
 
  
 console.log(`Corrected New Velocity: ${newVelocity} km/h`);
