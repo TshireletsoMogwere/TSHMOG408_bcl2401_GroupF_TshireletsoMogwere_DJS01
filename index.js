@@ -6,12 +6,14 @@
  */
 
 // Given Parameters
-const velocity = 10000; // velocity (km/h)
-const acceleration = 3; // acceleration (m/s^2)
-const time = 3600; // seconds (1 hour)
-const distance = 0; // distance (km)
-const RemainingFuel = 5000; // remaining fuel (kg)
-const fuelBurnRate = 0.5; // fuel burn rate (kg/s)
+const props = {
+velocity: 10000, // velocity (km/h)
+acceleration: 3, // acceleration (m/s^2)
+time: 3600, // seconds (1 hour)
+distance: 0, // distance (km)
+RemainingFuel: 5000, // remaining fuel (kg)
+fuelBurnRate: 0.5, // fuel burn rate (kg/s)
+}
 
 //Convert values into correct units
 const timeConversionFactor = 3600;
