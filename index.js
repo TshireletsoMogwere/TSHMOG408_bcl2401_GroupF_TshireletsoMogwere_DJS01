@@ -14,23 +14,13 @@ const fuel = 5000; // remaining fuel (kg)
 const fbr = 0.5; // fuel burn rate (kg/s)
 
 
-const d2 = d + (vel*time/3600) //calcultes new distance
-const rf = fuel - fbr*time //calculates remaining fuel
+const d2 = d + (vel*time) //calcultes new distance
+const rf = fbr*time //calculates remaining fuel
 const vel2 = calcNewVel(acc, vel, time) //calculates new velocity based on acceleration
 
 // Pick up an error with how the function below is called and make it robust to such errors
 function calcNewVel (acc, vel, time) { 
-  if (isNaN(acc) || isNaN(vel) || isNaN(time)) {
-    throw new Error("Error! Values must be digits");
-  } 
-  if (acc < 0 || vel < 0 || time < 0) {
-    throw new Error("Invalid input. Values must not be negative");
-  }
-  if (d2 > 10000 || rf > 3200 || vel > 48880) {
-    throw new Error("Value inputs exceeded")
-  }
-  
-  return vel + (acc * 3.6 * time);
+  return vel + (acc * time);
 }
 
  
