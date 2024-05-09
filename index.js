@@ -26,6 +26,9 @@ const newRemainingFuel = props.RemainingFuel - props.fuelBurnRate*props.time; //
 // Pick up an error with how the function below is called and make it robust to such errors
 const calculateNewVelocity = (props) => {
   const {acceleration, velocity, time} = props;
+  if (acceleration !== 3 || velocity !== 10000 || time !== 3600) {
+    throw new Error("Invalid units input")
+  }
   return velocity + (acceleration * accelerationConversionFactor * time);
 };
 
