@@ -18,13 +18,13 @@ const timeConversionFactor = 3600;
 const accelerationConversionFactor = 3.6;
 
 
-const newDistance = distance + (velocity*time) //calcultes new distance
-const newRemainingFuel = fuelBurnRate*time //calculates remaining fuel
+const newDistance = distance + (velocity*time/timeConversionFactor) //calcultes new distance
+const newRemainingFuel = RemainingFuel - fuelBurnRate*time //calculates remaining fuel
 const newVelocity = calcNewVel(acceleration, velocity, time) //calculates new velocity based on acceleration
 
 // Pick up an error with how the function below is called and make it robust to such errors
 function calcNewVel (acceleration, velocity, time) { 
-  return velocity + (acceleration * time);
+  return velocity + (acceleration * accelerationConversionFactor * time);
 }
 
  
